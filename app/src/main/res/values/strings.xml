@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MiniPractical</string>
+
+    <string name="main_title_home">首页</string>
+    <string name="main_title_shop">逛逛</string>
+    <string name="main_title_shop_cart">购物车</string>
+    <string name="main_title_my">我的</string>
+
+
+</resources>

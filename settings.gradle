@@ -1,0 +1,6 @@
+include ':home'
+include ':mine'
+include ':shop'
+include ':base'
+include ':app'
+rootProject.name = "MiniPractical"

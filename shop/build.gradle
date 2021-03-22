@@ -1,0 +1,18 @@
+apply from: "../module.gradle"
+android {
+    defaultConfig {
+        if (!isNeedShopModule.toBoolean()){
+            applicationId "com.ny.practical.shop"
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation project(path: ':base')
+    testImplementation rootProject.ext.support["junit"]
+    androidTestImplementation rootProject.ext.support["test-ext"]
+    androidTestImplementation rootProject.ext.support["test-espresso"]
+    annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
+    annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
+}

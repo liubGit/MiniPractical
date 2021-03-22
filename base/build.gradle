@@ -1,0 +1,63 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    api fileTree(dir: "libs", include: ["*.jar"])
+    api rootProject.ext.support["appcompat"]
+    api rootProject.ext.support["constraintlayout"]
+    testImplementation rootProject.ext.support["junit"]
+    androidTestImplementation rootProject.ext.support["test-ext"]
+    androidTestImplementation rootProject.ext.support["test-espresso"]
+
+    api rootProject.ext.support["multidex"]
+
+    api rootProject.ext.support["design"]
+    api rootProject.ext.support["recyclerview-v7"]
+
+    api rootProject.ext.dependencies["rxjava"]
+    api rootProject.ext.dependencies["rxandroid"]
+//    api rootProject.ext.dependencies["eventbus"]
+
+    api rootProject.ext.dependencies["rxlifecycle"]
+    api rootProject.ext.dependencies["rxlifecycle-components"]
+
+    //net
+    api rootProject.ext.dependencies["retrofit"]
+    api rootProject.ext.dependencies["converter-gson"]
+    api rootProject.ext.dependencies["logging-interceptor"]
+    api rootProject.ext.dependencies["adapter-rxjava"]
+    api rootProject.ext.dependencies["gson"]
+
+    //ButterKnife
+    api rootProject.ext.dependencies["butterknife"]
+    annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
+
+    //阿里路由
+    api rootProject.ext.dependencies["arouter"]
+
+
+//    api rootProject.ext.dependencies["dagger"]
+//    annotationProcessor rootProject.ext.dependencies["dagger-compiler"]
+
+}

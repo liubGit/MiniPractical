@@ -1,0 +1,7 @@
+<resources>
+
+<style name="Navigation_Them" parent="Theme.AppCompat.Light.NoActionBar">
+    <item name="colorPrimary">?colorAccent</item>
+    <item name="android:textColorPrimary">?colorAccent</item>
+</style>
+</resources>
